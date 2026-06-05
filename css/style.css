@@ -1,0 +1,233 @@
+/* =========================================
+   全域與動畫設定
+   ========================================= */
+/* 讓點擊導覽列時有平滑滾動的效果 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 基礎部落格排版設定 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   頂部導覽列
+   ========================================= */
+nav {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #2b6cb0;
+}
+
+/* =========================================
+   主要內容區塊與間距
+   ========================================= */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 每個大區塊的間距設定 */
+section {
+    margin-bottom: 80px;
+    /* padding-top 為了配合 sticky nav，避免滾動後標題被導覽列遮住 */
+    padding-top: 80px; 
+    margin-top: -80px;
+}
+
+.section-title {
+    font-size: 28px;
+    color: #2d3748;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   關於我 區塊
+   ========================================= */
+.about-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    flex-shrink: 0;
+}
+
+.about-info h1 {
+    margin: 0 0 10px 0;
+    font-size: 32px;
+}
+
+.contact-links .btn {
+    display: inline-flex;     /* 讓按鈕內的文字與圖標完美置中對齊 */
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;       /* 按鈕的上下與左右內襯長度 */
+    margin-bottom: 12px;      /* 兩個按鈕上下排開時的舒適間距 */
+    border-radius: 6px;       /* 讓按鈕邊角帶有一點圓弧，看起來更現代 */
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;    /* 拔除原本超連結討人厭的底線 */
+    transition: all 0.2s ease;/* 讓滑鼠移過去時的顏色轉變有平滑動畫 */
+    width: fit-content;       /* 讓按鈕寬度剛好符合文字長度 */
+}
+
+/* 2. GitHub 按鈕專屬顏色：沉穩的黑灰色 */
+.btn-github {
+    background-color: #24292e;
+    color: #ffffff !important; /* 強制文字變白色 */
+}
+
+/* 當滑鼠移到 GitHub 按鈕上時變淺色一點 */
+.btn-github:hover {
+    background-color: #444d56;
+    transform: translateY(-2px); /* 讓按鈕有一點微微往上浮起的互動感 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* 3. 電子郵件按鈕專屬顏色：顯眼的專業藍色 */
+.btn-email {
+    background-color: #3182ce;
+    color: #ffffff !important; /* 強制文字變白色 */
+}
+
+/* 當滑鼠移到 電子郵件按鈕上時變深色一點 */
+.btn-email:hover {
+    background-color: #2b6cb0;
+    transform: translateY(-2px); /* 同樣有上浮感 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.tag {
+    background-color: #edf2f7;
+    color: #4a5568;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* =========================================
+   部落格文章卡片 區塊
+   ========================================= */
+.post {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    border: 1px solid #e2e8f0;
+}
+
+.post-meta {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.post-title {
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    color: #2b6cb0;
+}
+
+.post-content h3 {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #2d3748;
+}
+
+.post-content p {
+    margin-bottom: 15px;
+    color: #4a5568;
+}
+
+/* =========================================
+   頁尾與響應式設計 (手機版)
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #a0aec0;
+    font-size: 14px;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    .about-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .tags {
+        justify-content: center;
+    }
+}
+/* 1. 這是你的圓圈外框限制器 */
+.avatar {
+    width: 150px;           /* 圓圈的寬度 (覺得太大或太小可以改數字) */
+    height: 150px;          /* 圓圈的高度，必須跟寬度一樣才會是正圓 */
+    border-radius: 50%;     /* 這個設定會讓正方形變成完美的圓形 */
+    overflow: hidden;       /* 核心魔法：把超出這個圓圈範圍的照片，全部喀嚓剪掉！ */
+    border: 5px solid #ffffff; /* 給你的大頭貼加上一個 5px 的白色邊框 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* 加一點淡淡的陰影，讓圓框有立體感 */
+    flex-shrink: 0;         /* 確保在手機螢幕上，圓圈不會被擠壓變成橢圓形 */
+}
+
+/* 2. 這是控制裡面那張照片的行為 */
+.avatar img {
+    width: 100%;            /* 讓照片的寬度剛剛好填滿圓圈 */
+    height: 100%;           /* 讓照片的高度剛剛好填滿圓圈 */
+    object-fit: cover;      /* 核心魔法：讓照片自動縮放並「置中裁切」，臉絕對不會變形或拉長！ */
+}
